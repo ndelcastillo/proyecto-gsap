@@ -39,11 +39,20 @@ gsap.to(".box", { x: 100, opacity: 1, duration: 1 });
 - Propiedades numéricas de objetos JavaScript (obj.value, por ejemplo)
 - Atributos de SVG
 - Filtros CSS o transformaciones 3D
+- Para obtener el mejor rendimiento, anima los valores de transformación CSS y la opacidad: x, y, rotación, rotaciónX, rotaciónY, skewX y skewY, scaleX, scaleY o simplemente scale
+- GSAP puede animar cualquier propiedad numérica que le proporciones: width and height, background-color, color, padding, left and top (must set position to relative, absolute, or fixed), vh and vw.
+- Los valores con guion deben estar en camelCase
+- Modificar valores que no sean transformaciones CSS ni opacidad puede provocar que el navegador rehaga el diseño de la página, lo que en casos extremos puede afectar al rendimiento. Para algunas animaciones, no es tan grave como algunos puristas creen.
 
 **Easing y duración**
 - Cada Tween puede tener:
 🔹 duration: tiempo en segundos
 🔹 ease: tipo de movimiento (por ejemplo, "power2.out", "elastic.out")
+- Si no especifica una duración, gsap utilizará el valor predeterminado de 0,5 segundos (500 ms).
+- Puede cambiar la duración predeterminada mediante:
+```js
+gsap.defaults({duration:1});
+```
 
 **Múltiples Tweens → Timeline**
 - Varios Tweens se pueden encadenar dentro de una Timeline para crear secuencias. Es un contenedor de multiples Tweens:

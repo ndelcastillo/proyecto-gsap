@@ -42,8 +42,13 @@ li {
     padding: 20px;
 }
 
+ul a {
+    text-decoration: none;
+    color: inherit;
+}
+
 /* -- Main -- */
-.section__1{
+.section__1 {
     min-height: 80dvh;
     display: flex;
     flex-direction: column;
@@ -96,6 +101,40 @@ li {
     background-color: aquamarine;
 }
 
+
+/* -- About -- */
+.main__about {
+    margin-bottom: 100px;
+}
+
+.section__about {
+    min-height: 80dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about__hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -140px;
+}
+
+.about__hero p {
+    width: 60%;
+    text-align: center;
+}
+
+.info__container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    width: 50%;
+}
 
 /* -- Footer -- */
 footer {

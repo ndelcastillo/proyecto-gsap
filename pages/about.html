@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="">Projects</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main__about">
+        <section class="section__about">
+            <div class="about__hero">
+                <h1>About</h1>
+                <p>Guía completa y resumida con los fundamentos principales de GSAP - Nicolas del Castillo.</p>
+            </div>
+        </section>
+        <section class="section__info">
+            <div class="info__container">
+                <h2>🌿 GSAP-NOTES</h2>
+                <p>Guía completa y resumida con los fundamentos principales de <strong>GSAP (GreenSock Animation
+                        Platform)</strong>.</p>
+
+                <h2>🚀 ¿Qué es GSAP?</h2>
+                <p><strong>GSAP (GreenSock Animation Platform)</strong> es una librería JavaScript para crear
+                    animaciones fluidas, precisas y de alto rendimiento en HTML, CSS, SVG, Canvas o WebGL.</p>
+
+                <p><strong>Ventajas principales:</strong></p>
+                <p>- Animaciones más suaves que con CSS.<br>
+                    - Control total con timelines, easings y secuencias.<br>
+                    - Plugins avanzados: ScrollTrigger, ScrollTo, Draggable, MotionPath.<br>
+                    - Excelente rendimiento en todos los navegadores.
+                </p>
+
+                <h2>🌀 Tween</h2>
+                <p>Un Tween (de “in-between”) es una animación que interpola valores entre un punto A y un punto B en el
+                    tiempo. Es el proceso que lleva una propiedad desde su estado inicial hasta su estado final.</p>
+
+                <p>Puedo observar cómo se está aplicando la animación inspeccionando el target, si tiene una duración
+                    alta.</p>
+                <p>El objeto GSAP tiene 3 métodos principales para crear Tweens y poder agregarlos a un Timeline.</p>
+
+                <p>🔹 gsap.to() — Anima desde el valor actual al nuevo valor.<br>
+                    🔹 gsap.from() — Anima desde un valor inicial al actual.<br>
+                    🔹 gsap.fromTo() — Define ambos estados (inicio y fin).
+                </p>
+
+                <p>Ejemplo simple: Esto crea un Tween que mueve el elemento con clase ".box" desde su posición actual x
+                    hasta x: 100 y una animación de opacidad de 0 a 1, todo en una duración de 1 segundo.</p>
+                <p>gsap.to(".box", { x: 100, opacity: 1, duration: 1 });</p>
+
+                <p>🔹 gsap.to() : method<br>
+                    🔹 "box" : target<br>
+                    🔹 { x: 100, opacity: 1, duration: 1 } : vars object<br>
+                    🔹 x: 100 : propiedad animada<br>
+                    🔹 duration: 1 : propiedad especial, no es animada directamente<br>
+                    🔹 ANIMATION : mueve el target “.box” en el eje X 100px en una duración de 1 segundo
+                </p>
+
+                <h3>🎨 Propiedades que puede animar un Tween</h3>
+                <p>- Propiedades CSS (x, y, scale, opacity, color, rotate, etc.)<br>
+                    - Propiedades numéricas de objetos JavaScript (obj.value, por ejemplo)<br>
+                    - Atributos de SVG<br>
+                    - Filtros CSS o transformaciones 3D<br>
+                    - Para mejor rendimiento, anima transformaciones CSS y opacidad: x, y, rotación, rotaciónX,
+                    rotaciónY, skewX, skewY, scaleX, scaleY o scale.<br>
+                    - GSAP puede animar cualquier propiedad numérica: width, height, backgroundColor, color, padding,
+                    left, top (con posición relativa, absoluta o fija), vh y vw.<br>
+                    - Los valores con guion deben estar en camelCase.<br>
+                    - Modificar propiedades que no sean transformaciones u opacidad puede forzar un reflow, afectando el
+                    rendimiento, aunque no siempre es grave.
+                </p>
+
+                <h3>⏱️ Easing y duración</h3>
+                <p>Cada Tween puede tener:</p>
+                <p>🔹 duration: tiempo en segundos<br>
+                    🔹 ease: tipo de movimiento (por ejemplo, "power2.out", "elastic.out")
+                </p>
+
+                <p>Si no especifica una duración, GSAP usa por defecto 0.5 segundos. Puede cambiarla con:</p>
+                <p>gsap.defaults({ duration: 1 });</p>
+
+                <h3>📜 Múltiples Tweens → Timeline</h3>
+                <p>Varios Tweens pueden encadenarse dentro de una Timeline para crear secuencias. Es un contenedor de
+                    múltiples Tweens:</p>
+                <p>
+                    let tl = gsap.timeline();<br>
+                    tl.to(".box1", { x: 100, duration: 1 })<br>
+                    .to(".box2", { y: 100, duration: 1 })<br>
+                    .to(".box3", { scale: 1.5, duration: 1 });
+                </p>
+
+                <h2>⚙️ SINTAXIS BÁSICA > GSAP</h2>
+                <h3>🔹 gsap.to()</h3>
+                <p>Anima desde el estado actual hacia el nuevo.</p>
+                <p>gsap.to(".box", { x: 100, opacity: 1, duration: 1 });</p>
+
+                <h3>🔹 gsap.from()</h3>
+                <p>Anima desde un estado inicial hacia su estado actual.</p>
+                <p>gsap.from(".title", { y: 50, opacity: 0, duration: 1 });</p>
+
+                <h3>🔹 gsap.fromTo()</h3>
+                <p>Define explícitamente el estado inicial y final.</p>
+                <p>gsap.fromTo(".item", { scale: 0 }, { scale: 1, duration: 1 });</p>
+
+                <h2>⚙️ SINTAXIS BÁSICA > TIMELINE</h2>
+                <h3>🔹 tl.to()</h3>
+                <p>Permiten encadenar múltiples animaciones y controlarlas fácilmente (pausar, revertir, etc.).</p>
+
+                <p>
+                    const tl = gsap.timeline({ repeat: 0, yoyo: false });<br>
+                    tl.to(".box1", { x: 100, duration: 1 })<br>
+                    .to(".box2", { y: 100, duration: 1 }, "-=0.5")<br>
+                    .to(".box3", { rotation: 360, duration: 1 });
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <p>© 2025 Wishpond</p>
+        </div>
+    </footer>
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script src="../main.js"></script>
+</body>
+
+</html>
