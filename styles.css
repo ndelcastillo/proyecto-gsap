@@ -1,0 +1,112 @@
+* {
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+:root {
+    font-size: 16px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: black;
+}
+
+h1 {
+    font-size: 7rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    letter-spacing: -3px;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6rem;
+}
+
+/* -- Header -- */
+nav {
+    min-height: 20dvh;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+li {
+    list-style: none;
+    padding: 20px;
+}
+
+/* -- Main -- */
+.section__1{
+    min-height: 80dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container__hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -140px;
+}
+
+.container__hero p {
+    width: 40%;
+    text-align: center;
+}
+
+
+.section__2 {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container__gsap {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+}
+
+.box-1 {
+    background-color: #424EDE;
+}
+
+.box-2 {
+    background-color: orange;
+}
+
+.box-3 {
+    background-color: aquamarine;
+}
+
+
+/* -- Footer -- */
+footer {
+    height: 10dvh;
+    background: linear-gradient(to right, #7439C8, #424EDE);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p {
+    color: white;
+}
