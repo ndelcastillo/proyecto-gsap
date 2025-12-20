@@ -147,9 +147,10 @@
                 <p>🔹 stagger: "each", "amount" es la propiedad que define el tiempo que dura en aparecer el siguiiente
                     objeto</p>
                 <p>🔹 from: "end", "center", "edges" es la propiedad que define la direccion del efecto. </p>
-                <h2>⚙️ Tween Control: Tween’s have a number of methods for controlling playback.
-                    In order to control a tween you need have way to reference it. Below we set up a variable to
-                    reference our tween. To prevent a tween from playing automatically you can set its paused special property to true. </h2>
+                <h2>⚙️ Tween Control: Tween’s have a number of methods for controlling playback.</h2>
+                <p>In order to control a tween you need have way to reference it. Below we set up a variable to
+                    reference our tween. To prevent a tween from playing automatically you can set its paused special
+                    property to true. </p>
                 <p>🔹 .play:</p>
                 <p>document.getElementById("play").onclick = () => tween.play();</p>
                 <p>🔹 .pause:</p>
@@ -160,6 +161,14 @@
                 <p>document.getElementById("restart").onclick = () => {
                     tween.seek(0).pause();
                     };</p>
+                <h2>⚙️ Transform Origin</h2>
+                <p>Por defecto, los elementos DOM se escalan, giran y distorsionan alrededor de su punto central. Si
+                    queremos modificar esto, podemos usar la propiedad CSS `transform-origin`. Como todas las
+                    propiedades CSS con guiones, transform-origin se convierte en transformOrigin cuando se usa en una
+                    animación GSAP.
+                </p>
+                <p>🔹 "transformOrigin": los valores se establecen con un par de valores horizontales (x) y verticales
+                    (y) como una sola cadena. Los valores se suelen establecer en píxeles, porcentajes o mediante CSS. Palabras clave:left, center, right, top, bottom.</p>
             </div>
         </section>
     </main>

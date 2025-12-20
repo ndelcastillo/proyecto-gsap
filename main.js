@@ -1,3 +1,5 @@
+/*-- Section-1: Tweening Basics --*/
+
 /* Example-1 */
 // 🔹 `gsap.to()` **Anima desde el valor actual al nuevo valor.**
 gsap.to(".box-1", { y: 100, duration: 1, delay: 0 })
@@ -83,3 +85,31 @@ document.getElementById("reverse").onclick = () => tween.reverse();
 document.getElementById("restart").onclick = () => {
     tween.seek(0).pause();
 };
+
+
+/* Example-9 */
+// 🔹 transformOrigin
+const tOrigin = gsap.to(".truck", {
+    transformOrigin: "-295px 180px",
+    rotation: -15,
+    repeat: 1,
+    yoyo: true,
+    duration: 0.3
+});
+document.addEventListener("keydown", (event) => {
+    if (event.code === "Space") { // detecta la barra espaciadora
+        tOrigin.restart();
+        event.preventDefault(); // evita que la página haga scroll hacia abajo
+    }
+});
+
+
+document.querySelector('.truck').onclick = function (e) {
+    const rect = e.target.getBoundingClientRect();
+    const x = Math.round(e.clientX - rect.left); // redondea al entero más cercano
+    const y = Math.round(e.clientY - rect.top);
+    console.log("El valor de X: " + x + ", El valor de Y: " + y);
+}; 
+
+
+/*-- Section-2: Timelines --*/

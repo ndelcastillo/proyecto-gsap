@@ -26,7 +26,7 @@ p {
     line-height: 1.6rem;
 }
 
-/* -- Header -- */
+/*==== Header =====*/
 nav {
     min-height: 20dvh;
 }
@@ -56,7 +56,12 @@ button {
     cursor: pointer;
 }
 
-/* -- Main -- */
+.sub-heading {
+    font-size: 3rem;
+    line-height: 1.6;
+}
+
+/*==== Main =====*/
 .section__1 {
     min-height: 80dvh;
     display: flex;
@@ -78,7 +83,6 @@ button {
     text-align: center;
 }
 
-
 .section__2 {
     height: 100dvh;
     display: flex;
@@ -88,7 +92,7 @@ button {
 }
 
 
-/* -- About -- */
+/*==== About =====*/
 .main__about {
     margin-bottom: 100px;
 }
@@ -122,7 +126,7 @@ button {
     width: 50%;
 }
 
-/* -- Projects -- */
+/*==== Projects =====*/
 .section__projects {
     min-height: 80dvh;
     display: flex;
@@ -145,7 +149,8 @@ button {
     text-align: center;
 }
 
-.section__examples {
+/*-- Section-1: Tweening Basics --*/
+.section__examples-1 {
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -153,7 +158,7 @@ button {
     padding: 0 100px 0 40px;
 }
 
-.section__examples h2 {
+.section__examples-1 h2 {
     margin-bottom: 50px
 }
 
@@ -243,7 +248,40 @@ button {
     margin-top: 50px;
 }
 
-/* -- Footer -- */
+/* Example-9 */
+.example__9 {
+    margin-bottom: 300px;
+}
+
+#demo {
+	position:relative;
+	width:500px;
+	height:350px;
+	border-bottom:100px solid black;
+	background:dodgerblue;
+}
+
+.truck {
+	position:absolute;
+	bottom:-3px;
+	left:60px;
+}
+
+/*-- Section-2: Timelines --*/
+.section__examples-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding: 0 100px 200px 40px;
+}
+
+.section__examples-2 h2 {
+    margin-bottom: 50px
+}
+
+
+/*==== Footer =====*/
 footer {
     height: 10dvh;
     background: linear-gradient(to right, #7439C8, #424EDE);
